@@ -11,7 +11,6 @@ foods =
   [ "Salamipizza"
   , "Salat"
   , "Noodlez mit Pesto"
-  , "1 @MeisterRados ping höhö"
   , "Grießknödel"
   , "Brezel-Emoji (benutz deine Vorstellungskraft, ich kann kein UTF-8)"
   , "Riesendöner"

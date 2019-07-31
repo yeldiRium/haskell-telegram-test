@@ -7,8 +7,10 @@ import           Control.Monad           (forever)
 import           Data.Either
 import           Data.List               (intercalate)
 import           Data.Maybe
+import           Data.Text               (pack)
 import           Network.HTTP.Client     (Manager, newManager)
 import           Network.HTTP.Client.TLS (tlsManagerSettings)
+import           System.Environment
 import           System.Random
 import           Web.Telegram.API.Bot
 
@@ -18,9 +20,13 @@ pollingTimeout = 5
 
 main :: IO ()
 main = do
-  let token = Token "bot726215439:AAGjlImqCFoaN0WKpyDXtUnRT8KpS-y_p2U"
-  manager <- newManager tlsManagerSettings
-  mainLoop token manager 0
+  tokenEnv <- lookupEnv "TELEGRAM_API_TOKEN"
+  if isNothing tokenEnv
+    then putStrLn "No bot token found. Stopping."
+    else do
+      let token = Token (pack $ "bot" ++ (fromJust tokenEnv))
+      manager <- newManager tlsManagerSettings
+      mainLoop token manager 0
 
 mainLoop :: Token -> Manager -> Int -> IO ()
 mainLoop token manager lastUpdate = do
