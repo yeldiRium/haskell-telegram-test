@@ -19,6 +19,8 @@ dependencies:
 - telegram-api
 - http-client
 - http-client-tls
+- random
+- text
 
 library:
   source-dirs: src
