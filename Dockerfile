@@ -9,4 +9,4 @@ ADD app app
 ADD src src
 RUN stack build
 
-ENTRYPOINT ["./.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/testbot-exe/testbot-exe"]
+ENTRYPOINT ["./.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/haskellbot-exe/haskellbot-exe"]
