@@ -1,0 +1,34 @@
+name:                testbot
+version:             0.1.0.0
+github:              "githubuser/yeldiRium"
+license:             BSD3
+author:              "Hannes Leutloff"
+maintainer:          "hannes.leutloff@yeldirium.de"
+copyright:           "2019 Hannes Leutloff"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/yeldiRium/haskell-telegram-test>
+
+dependencies:
+- base >= 4.7 && < 5
+- telegram-api >= 0.7 && < 1
+
+library:
+  source-dirs: src
+
+executables:
+  testbot-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - testbot
