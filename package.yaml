@@ -8,7 +8,6 @@ copyright:           "2019 Hannes Leutloff"
 
 extra-source-files:
 - README.md
-- ChangeLog.md
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
@@ -17,7 +16,9 @@ description:         Please see the README on GitHub at <https://github.com/yeld
 
 dependencies:
 - base >= 4.7 && < 5
-- telegram-api >= 0.7 && < 1
+- telegram-api
+- http-client
+- http-client-tls
 
 library:
   source-dirs: src
