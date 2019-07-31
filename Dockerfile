@@ -5,7 +5,8 @@ ADD stack.yaml stack.yaml
 ADD package.yaml package.yaml
 RUN stack install --only-dependencies
 
-ADD . /app
+ADD app app
+ADD src src
 RUN stack build
 
-CMD ["./.stack-cork/dist/x86_64-linux/Cabal-1.24.2.0/build/testbot-exe/testbot-exe"]
+ENTRYPOINT ["./.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/testbot-exe/testbot-exe"]
