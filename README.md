@@ -1,4 +1,4 @@
-# haskelbot
+# haskell food bot
 
 I wanted to see if I can write a telegram bot in Haskell. Turns out: I can.
 
